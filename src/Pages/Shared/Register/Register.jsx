@@ -34,10 +34,9 @@ const Register = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-outline btn-success">Register </button>
-
                             </div>
                         </form>
-                        <Link to="/login" >Already Have an Account <br /> log In Now  </Link>
+                        <h1 className="text-center border p-2 text-lg font-medium text-green-700 ">Already Have an Account <br /> <Link to="/login" className="hover:text-rose-700 " >logIn Now </Link> </h1>
                     </div>
                 </div>
             </div>
