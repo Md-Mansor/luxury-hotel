@@ -1,10 +1,29 @@
 import { Link } from "react-router-dom";
+import logo from "../../../assets/google.png"
 import img from "../../../assets/login.jpg"
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../../Firebase/Firebase.config";
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { logIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+
+    const auth = getAuth(app)
+    const handelGoogleLogin = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('Login Successfully')
+
+            })
+            .catch(error => {
+                console.log('error', error.massage);
+            })
+    }
 
     const handelLogin = e => {
         e.preventDefault()
@@ -12,10 +31,12 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        signIn(email, password)
+
+        logIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast.success('login Successfully');
             })
             .catch(error => console.log(error));
     }
@@ -45,12 +66,15 @@ const Login = () => {
                                 <input className="btn btn-outline btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className="text-center">Or Login With</p>
-                        <img src="" alt="" />
+                        <div className="flex flex-col gap-1 justify-center  items-center">
+                            <p className="">Or Login With</p>
+                            <img onClick={handelGoogleLogin} src={logo} alt="google" className="w-16 h-16 hover:cursor-pointer" />
+                        </div>
                         <h1 className="text-center border p-2 text-lg font-medium text-indigo-400  ">New In This Page <Link to="/signUp" className="hover:text-rose-700 " >Register Now </Link> </h1>
                     </div>
                 </div>
             </div>
+            <Toaster></Toaster>
         </div>
     );
 };

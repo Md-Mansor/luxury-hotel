@@ -1,7 +1,26 @@
+import { useContext } from "react";
 import logo from "../../../assets/accommodation.png"
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../../Provider/AuthProvider";
+
 
 const NavBar = () => {
+
+
+    const { logOut, user } = useContext(AuthContext);
+
+    const handelLogOut = () => {
+        logOut()
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    console.log(user);
+
+
     const navItems = <>
         <li><Link to='/'>Home </Link></li>
         <li><Link to='/rooms'>Rooms</Link></li>
@@ -34,7 +53,21 @@ const NavBar = () => {
                 </div>
 
                 <div className="navbar-end">
-                    <Link to='login' className="btn btn-outline btn-info">Sign In</Link>
+                    {
+                        user ? (
+                            <div className="flex flex-row items-center gap-5">
+                                <div className="flex flex-col-reverse items-center gap-1 border-2 rounded-md bg-lime-100 pt-2">
+                                    <p className="textarea-sm font-semibold">{user.displayName}</p>
+                                    <img src={user.photoURL} alt="" className="rounded-full w-12 h-12" />
+                                </div>
+                                <div>
+                                    <button className="btn btn-outline btn-info" onClick={handelLogOut}>Log Out</button>
+                                </div>
+                            </div>
+                        ) :
+                            <Link to='login' className="btn btn-outline btn-info">Sign In</Link>
+                    }
+                    <input type="checkbox" className="toggle toggle-success" checked />
                 </div>
             </div>
         </div>
