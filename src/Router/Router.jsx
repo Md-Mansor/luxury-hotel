@@ -8,6 +8,7 @@ import Login from "../Pages/Shared/Log/Login";
 import FormOne from "../Forms/Form1/FormOne";
 import Room from "../Forms/Room/Room";
 import Private from "./Private";
+import RoomDetails from "../Pages/Shared/RoomDetails/RoomDetails";
 
 
 
@@ -21,28 +22,32 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: "rooms",
+                path: "/rooms",
                 element: <Rooms></Rooms>
             },
             {
-                path: "booking",
+                path: "/booking",
                 element: <Private><Bookings></Bookings></Private>
             },
             {
-                path: "signUp",
+                path: "/signUp",
                 element: <Register></Register>
             },
             {
-                path: "login",
+                path: "/login",
                 element: <Login></Login>
             },
             {
-                path: "adding",
+                path: "/adding",
                 element: <Private><FormOne></FormOne></Private>
             },
             {
-                path: "create",
+                path: "/create",
                 element: <Room></Room>
+            },
+            {
+                path: "/roomDetails/:id",
+                element: <RoomDetails></RoomDetails>
             }
         ]
     }

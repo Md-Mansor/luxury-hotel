@@ -14,8 +14,10 @@ const Room = () => {
         const One = form.One.value;
         const Two = form.Two.value;
         const Three = form.Three.value;
+        const Location = form.location.value
+        const Title = form.title.value
         const Description = form.Description.value;
-        const roomData = { Photo, Price, Size, One, Two, Three, Description }
+        const roomData = { Photo, Price, Size, One, Two, Three, Location, Title, Description }
         // console.log(Photo, Price, Size, One, Two, Three, Description);
         console.log(roomData);
         axios.post('http://localhost:5000/room', roomData)
@@ -71,6 +73,19 @@ const Room = () => {
                             </label>
                             <input type="text" placeholder="Images Three" name="Three" className="input input-bordered" required />
                         </div>
+                        <div className="form-control">
+                            <label className="">
+                                <span className="text-lg font-medium">Room Title</span>
+                            </label>
+                            <input type="text" placeholder="Title" name="title" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="">
+                                <span className="text-lg font-medium">Location</span>
+                            </label>
+                            <input type="text" placeholder="location" name="location" className="input input-bordered" required />
+                        </div>
+
                     </div>
                     <div className="form-control">
                         <label className="">
