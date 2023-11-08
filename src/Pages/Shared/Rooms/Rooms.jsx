@@ -20,7 +20,7 @@ const Rooms = () => {
         <div >
             {
                 rooms.map((room) => (
-                    <div key={room.id} className="card w-96 bg-base-100 shadow-xl">
+                    <div key={room._id} className="card w-96 bg-base-100 shadow-xl">
                         <Link to={`/roomDetails/${room?._id}`}>
                             <figure><img src={room.Photo} alt="Shoes" /></figure>
                             <div className="card-body">

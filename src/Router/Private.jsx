@@ -6,18 +6,18 @@ const Private = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
 
     const location = useLocation()
-    console.log(location.pathname);
+    console.log(location);
 
 
     if (loading) {
 
-        <span className="loading loading-spinner text-error"></span>
+        return <span className="loading loading-spinner text-error"></span>
     }
 
     if (user) {
         return children
     }
-    return <Navigate to="/login" replace state={location.pathname}></Navigate>
+    return <Navigate to="/login" replace state={location?.pathname}></Navigate>
 
 };
 

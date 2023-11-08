@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 const RoomDetails = () => {
@@ -55,7 +55,9 @@ const RoomDetails = () => {
             <div className="w-1/4 border-4 border-red-300 border-dotted rounded-xl" >
                 <p>Price Per Night : $ {Price}</p>
                 <p>Room Size :{Size} ft<sup>2</sup></p>
-                <button className="btn btn-outline btn-error">Book Now</button>
+                <Link to={`/bookingForm/${id}`}>
+                    <button className="btn btn-outline btn-error">Book Now</button>
+                </Link>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import FormOne from "../Forms/Form1/FormOne";
 import Room from "../Forms/Room/Room";
 import Private from "./Private";
 import RoomDetails from "../Pages/Shared/RoomDetails/RoomDetails";
+import BookingForm from "../Pages/Shared/BookingForm/BookingForm";
 
 
 
@@ -48,6 +49,15 @@ const router = createBrowserRouter([
             {
                 path: "/roomDetails/:id",
                 element: <RoomDetails></RoomDetails>
+            },
+            {
+                path: "bookingForm/:id",
+                element: <BookingForm></BookingForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/bookingForm/${params.id}`)
+            },
+            {
+                path: "booked",
+                element: <Bookings></Bookings>
             }
         ]
     }
