@@ -29,7 +29,7 @@ const BookingForm = () => {
             To
         }
         console.log(order);
-        fetch('http://localhost:5000/booked', {
+        fetch('https://b8a11-server-side-md-mansor-6tj1f71hj-md-mansors-projects.vercel.app/booked', {
             method: 'POST',
             headers: {
                 "content-type": ' application/json'

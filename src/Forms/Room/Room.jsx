@@ -20,7 +20,7 @@ const Room = () => {
         const roomData = { Photo, Price, Size, One, Two, Three, Location, Title, Description }
         // console.log(Photo, Price, Size, One, Two, Three, Description);
         console.log(roomData);
-        axios.post('http://localhost:5000/room', roomData)
+        axios.post('https://b8a11-server-side-md-mansor-6tj1f71hj-md-mansors-projects.vercel.app/room', roomData)
             .then(data => {
                 console.log(data.data);
             })

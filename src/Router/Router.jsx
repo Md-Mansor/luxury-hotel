@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: "bookingForm/:id",
                 element: <BookingForm></BookingForm>,
-                loader: ({ params }) => fetch(`http://localhost:5000/bookingForm/${params.id}`)
+                loader: ({ params }) => fetch(`https://b8a11-server-side-md-mansor-6tj1f71hj-md-mansors-projects.vercel.app/bookingForm/${params.id}`)
             },
             {
                 path: "booked",

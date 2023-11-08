@@ -11,7 +11,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        const imgUrl = 'http://localhost:5000/homeBanner';
+        const imgUrl = 'https://b8a11-server-side-md-mansor-6tj1f71hj-md-mansors-projects.vercel.app/homeBanner';
         fetch(imgUrl)
             .then(res => res.json())
             .then(data => {
