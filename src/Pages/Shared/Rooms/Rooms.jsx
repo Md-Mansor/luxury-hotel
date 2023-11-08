@@ -17,7 +17,7 @@ const Rooms = () => {
 
 
     return (
-        <div >
+        <div className="lg:grid grid-flow-col  gap-12 justify-around py-10" >
             {
                 rooms.map((room) => (
                     <div key={room._id} className="card w-96 bg-base-100 shadow-xl">
@@ -28,7 +28,7 @@ const Rooms = () => {
                                     {room.Title}
                                 </h2>
                                 <div className="card-actions justify-end">
-                                    <div className="badge badge-outline">${room.Price}</div>
+                                    <div className="badge badge-outline">Price: ${room.Price}</div>
                                 </div>
                             </div>
                         </Link>

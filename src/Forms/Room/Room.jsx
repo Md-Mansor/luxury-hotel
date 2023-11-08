@@ -25,7 +25,7 @@ const Room = () => {
                 console.log(data.data);
             })
             .catch(error => {
-                console.error('error is', error)
+                console.error('error is', error);
             })
 
     }

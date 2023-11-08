@@ -1,3 +1,4 @@
+import axios from "axios";
 
 const FormOne = () => {
 
@@ -6,7 +7,16 @@ const FormOne = () => {
         e.preventDefault()
         const form = e.target;
         const url = form.url.value;
-        console.log(url);
+        const imageLink = { url };
+        console.log(imageLink);
+
+        axios.post('http://localhost:5000/homeBanner', imageLink)
+            .then(data => {
+                console.log(data.data);
+            })
+            .catch(error => {
+                console.error('error is ', error);
+            })
     }
 
     return (
