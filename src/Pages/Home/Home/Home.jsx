@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import news from '../../../assets/news.jpg'
 import GoogleMap from "./Google/Google";
+import Testimonials from "./Testimonial/Testimonial";
 // import { Parallax } from "react-scroll-parallax";
 
 
@@ -33,7 +34,7 @@ const Home = () => {
                 }
                 {/* </Parallax> */}
             </div>
-            <div className="flex flex-row  w-1/2 mx-auto gap-1">
+            <div className="lg:flex flex-row  w-1/2 mx-auto gap-1">
                 <div>
                     <img src={news} alt="" className="rounded-lg" />
                 </div>
@@ -53,8 +54,9 @@ const Home = () => {
                     </form>
                 </div>
             </div>
+            <Testimonials></Testimonials>
             <div>
-                <h1>Hotel Location</h1>
+                <h1 className="text-center font-bold text-4xl">Hotel Location</h1>
                 <GoogleMap />
             </div>
         </div>
