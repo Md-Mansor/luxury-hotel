@@ -52,7 +52,7 @@ const RoomDetails = () => {
                     <p className="text-xl font-semibold">{Description}</p>
                 </div>
             </div>
-            <div className="w-1/4 border-4 flex flex-col justify-center border-red-300 border-dotted rounded-xl" >
+            <div className="w-1/4 border-4 flex flex-col items-center gap-4 border-red-300 border-dotted rounded-xl" >
                 <p className="text-xl font-bold">Price Per Night : $ {Price}</p>
                 <p className="font-bold text-xl">Room Size :{Size} ft<sup>2</sup></p>
                 <Link to={`/bookingForm/${id}`}>
