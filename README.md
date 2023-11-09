@@ -1,8 +1,9 @@
-# React + Vite
+# Accommodation || Hotel Room Booking Website Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Home Page
+1.At home page user find some stunning images of hotel room for fist visual experience.
+2.Can read the user rating and their comments about this hotel room.
+3.User can subscribe news letter to get update news and offer.
+4.User can find location easily by Map on click map.
+## Room Page 
+1.In room page there are many room image with price and category 
