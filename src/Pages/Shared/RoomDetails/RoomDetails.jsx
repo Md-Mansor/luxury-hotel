@@ -12,7 +12,7 @@ const RoomDetails = () => {
 
 
     useEffect(() => {
-        const apiUrl = `https://b8a11-server-side-md-mansor-6tj1f71hj-md-mansors-projects.vercel.app/roomDetails/${id}`
+        const apiUrl = `https://b8a11-server-side-md-mansor.vercel.app/roomDetails/${id}`
         fetch(apiUrl)
             .then(res => res.json())
             .then(data => {
