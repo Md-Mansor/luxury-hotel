@@ -3,6 +3,8 @@ import news from '../../../assets/news.jpg'
 import GoogleMap from "./Google/Google";
 import Testimonials from "./Testimonial/Testimonial";
 // import { Parallax } from "react-scroll-parallax";
+import { motion } from "framer-motion";
+
 
 
 const Home = () => {
@@ -25,11 +27,12 @@ const Home = () => {
 
                 {
                     picture.map((img) => (
-                        <div key={img._id}>
+                        <motion.div key={img._id} whileHover={{ scale: [null, 1.5, 1.4] }}
+                            transition={{ duration: 0.3 }}>
 
                             <img src={img.url} alt="" className="h-96 w-full p-5" />
 
-                        </div>
+                        </motion.div>
                     ))
                 }
                 {/* </Parallax> */}
@@ -59,7 +62,7 @@ const Home = () => {
                 <h1 className="text-center font-bold text-4xl">Hotel Location</h1>
                 <GoogleMap />
             </div>
-        </div>
+        </div >
     );
 };
 
