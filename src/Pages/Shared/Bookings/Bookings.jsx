@@ -8,7 +8,7 @@ const Bookings = () => {
     const handleDelete = id => {
         const proceed = confirm('Are You Sure');
         if (proceed) {
-            const deleteUrl = `https://b8a11-server-side-md-mansor.vercel.app/booked/${id}`;
+            const deleteUrl = `http://localhost:5000/booked/${id}`;
             fetch(deleteUrl, {
                 method: 'DELETE',
             })
@@ -16,7 +16,7 @@ const Bookings = () => {
                 .then(data => {
                     if (data.success) {
                         // Refresh the data after successful deletion
-                        const url = `https://b8a11-server-side-md-mansor.vercel.app/booked?Email=${user?.email}`;
+                        const url = `http://localhost:5000/booked?Email=${user?.email}`;
                         fetch(url)
                             .then(res => res.json())
                             .then(data => setBooked(data))
@@ -29,7 +29,7 @@ const Bookings = () => {
         }
     }
 
-    const url = `https://b8a11-server-side-md-mansor.vercel.app/booked?Email=${user?.email}`;
+    const url = `http://localhost:5000/booked?Email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

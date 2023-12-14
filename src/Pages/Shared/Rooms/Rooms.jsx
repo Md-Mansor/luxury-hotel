@@ -7,7 +7,7 @@ const Rooms = () => {
 
 
     useEffect(() => {
-        const apiUrl = 'https://b8a11-server-side-md-mansor.vercel.app/room';
+        const apiUrl = 'http://localhost:5000/room';
         fetch(apiUrl)
             .then(res => res.json())
             .then(data => {

@@ -10,7 +10,7 @@ const FormOne = () => {
         const imageLink = { url };
         console.log(imageLink);
 
-        axios.post('https://b8a11-server-side-md-mansor.vercel.app/homeBanner', imageLink)
+        axios.post('http://localhost:5000/homeBanner', imageLink)
             .then(data => {
                 console.log(data.data);
             })
