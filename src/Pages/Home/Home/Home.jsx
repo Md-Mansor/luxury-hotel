@@ -27,8 +27,8 @@ const Home = () => {
 
                 {
                     picture.map((img) => (
-                        <motion.div key={img._id} whileHover={{ scale: [null, 1.5, 1.4] }}
-                            transition={{ duration: 0.3 }}>
+                        <motion.div key={img._id} whileHover={{ scale: [null, 1.5, 1.5] }}
+                            transition={{ duration: 0.5 }}>
 
                             <img src={img.url} alt="" className="h-96 w-full p-5" />
 
