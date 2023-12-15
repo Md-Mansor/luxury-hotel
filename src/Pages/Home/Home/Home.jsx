@@ -4,6 +4,7 @@ import GoogleMap from "./Google/Google";
 import Testimonials from "./Testimonial/Testimonial";
 // import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
+import Chat from "../Chat/Chat";
 
 
 
@@ -58,6 +59,7 @@ const Home = () => {
                 </div>
             </div>
             <Testimonials></Testimonials>
+            <Chat></Chat>
             <div>
                 <h1 className="text-center font-bold text-4xl">Hotel Location</h1>
                 <GoogleMap />
